@@ -459,6 +459,74 @@
             font-weight: 500;
         }
 
+        /* PROJECT ROLE */
+        .project-role {
+            font-size: 0.82rem;
+            color: #505a64;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .project-role .role-label { color: #00b8dd; font-weight: 600; }
+
+        /* DEVICE MOCKUPS */
+        .device-frames {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 18px 10px;
+            width: 100%;
+            height: 100%;
+        }
+        .device-desktop-frame {
+            background: #09121c;
+            border: 1.5px solid #1a3248;
+            border-radius: 4px 4px 0 0;
+            flex: 1;
+            max-width: 118px;
+        }
+        .device-desktop-bar {
+            height: 14px;
+            background: #060e17;
+            border-bottom: 1px solid #1a3248;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 0 6px;
+            gap: 4px;
+        }
+        .device-dot { width: 5px; height: 5px; border-radius: 50%; background: #1e3a52; flex-shrink: 0; }
+        .device-desktop-screen {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+        }
+        .device-mobile-frame {
+            background: #09121c;
+            border: 1.5px solid #1a3248;
+            border-radius: 9px;
+            width: 42px;
+            flex-shrink: 0;
+            padding: 5px 3px 3px;
+        }
+        .device-mobile-notch {
+            width: 10px; height: 3px;
+            background: #1a3248;
+            border-radius: 2px;
+            margin: 0 auto 3px;
+        }
+        .device-mobile-screen {
+            height: 74px;
+            background: #0a1520;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
         /* ABOUT */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .about-text p { color: #777; line-height: 1.85; margin-bottom: 16px; font-size: 0.97rem; }
@@ -510,6 +578,165 @@
             transition: border-color 0.2s, color 0.2s;
         }
         .trait-chip .chip-icon { font-size: 0.9rem; }
+
+        /* AI TAKE */
+        .ai-take-card {
+            background: linear-gradient(145deg, #0a1220, #0e0e0e);
+            border: 1px solid #1a2d3d;
+            border-radius: 20px;
+            padding: 52px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ai-take-card::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, #00d4ff07 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-take-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,160,0,0.08);
+            border: 1px solid rgba(255,160,0,0.25);
+            border-radius: 20px;
+            padding: 6px 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ffa040;
+            margin-bottom: 28px;
+        }
+        .ai-quote {
+            font-size: clamp(1.4rem, 3vw, 2.1rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            color: #d8d8d8;
+            border-left: 3px solid #00d4ff;
+            padding-left: 24px;
+            margin: 0 0 36px;
+            font-style: normal;
+        }
+        .ai-quote span {
+            background: linear-gradient(90deg, #00d4ff, #0094ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .ai-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .ai-point {
+            background: #090909;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 18px;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+        .ai-point:hover { border-color: #00d4ff33; transform: translateY(-3px); }
+        .ai-point-icon { font-size: 1.3rem; margin-bottom: 10px; }
+        .ai-point-title { font-size: 0.88rem; font-weight: 700; color: #ccc; margin-bottom: 6px; }
+        .ai-point p { font-size: 0.83rem; color: #555; line-height: 1.7; margin: 0; }
+        .ai-closing {
+            font-size: 0.97rem;
+            color: #5a7080;
+            line-height: 1.85;
+            border-top: 1px solid #151515;
+            padding-top: 28px;
+            margin: 0;
+        }
+        .ai-closing strong { color: #00d4ff; font-weight: 700; }
+
+        /* AI HIGHLIGHT CARD */
+        .ai-highlight {
+            position: relative;
+            background: linear-gradient(135deg, #07161f 0%, #091a26 50%, #07111a 100%);
+            border: 1px solid #00d4ff44;
+            border-radius: 16px;
+            padding: 32px 36px;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            overflow: hidden;
+            box-shadow: 0 0 40px #00d4ff0a, inset 0 1px 0 #00d4ff22;
+        }
+        .ai-highlight::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #00d4ff08 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .ai-highlight-icon {
+            font-size: 2.6rem;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 12px #00d4ff66);
+        }
+        .ai-highlight-body { flex: 1; }
+        .ai-highlight-body strong {
+            display: block;
+            font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+            font-weight: 800;
+            color: #e8e8e8;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+        .ai-highlight-body strong em {
+            background: linear-gradient(90deg, #00d4ff, #0094ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: normal;
+        }
+        .ai-highlight-body p {
+            font-size: 0.9rem;
+            color: #4d6878;
+            line-height: 1.75;
+            margin: 0;
+        }
+        .ai-highlight-proof {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,212,255,0.06);
+            border: 1px solid rgba(0,212,255,0.18);
+            border-radius: 12px;
+            padding: 16px 22px;
+            text-align: center;
+        }
+        .ai-highlight-proof .proof-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00d4ff;
+            opacity: 0.7;
+        }
+        .ai-highlight-proof .proof-sites {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .ai-highlight-proof .proof-site {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #7ab8cc;
+        }
+        @media (max-width: 768px) {
+            .ai-highlight { flex-direction: column; gap: 20px; padding: 24px 20px; }
+            .ai-highlight-proof { width: 100%; flex-direction: row; justify-content: space-around; padding: 12px 16px; }
+        }
 
         /* CONTACT */
         #contact { text-align: center; }
@@ -652,6 +879,43 @@
         }
         .contact-reply span { color: #00d4ff; opacity: 0.7; }
 
+        /* OPEN TO TEAM CARD */
+        .open-to-team {
+            max-width: 720px;
+            margin: 24px auto 0;
+            background: #0c0c0c;
+            border: 1px solid #1e1e1e;
+            border-radius: 18px;
+            padding: 32px 36px;
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .open-to-team:hover { border-color: #00d4ff2a; box-shadow: 0 8px 32px #00d4ff08; }
+        .open-to-team-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .open-to-team-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #d0d0d0;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+        .open-to-team-body p {
+            font-size: 0.87rem;
+            color: #505a64;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .open-to-team-body p strong { color: #00d4ff; font-weight: 600; }
+        @media (max-width: 768px) {
+            .open-to-team { flex-direction: column; gap: 14px; padding: 24px 20px; }
+        }
+
         /* BACK TO TOP */
         #back-top {
             position: fixed;
@@ -708,6 +972,8 @@
             .projects-grid { grid-template-columns: 1fr; }
             .contact-links { flex-direction: column; align-items: center; }
             .contact-link { width: 100%; max-width: 340px; justify-content: center; }
+            .ai-points { grid-template-columns: 1fr; }
+            .ai-take-card { padding: 36px 24px; }
             #back-top { bottom: 18px; right: 14px; }
         }
 
@@ -739,6 +1005,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#ai-take">AI &amp; Honesty</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle menu">
@@ -750,8 +1017,9 @@
     <div class="nav-overlay" id="nav-overlay">
         <a href="#about"    onclick="closeMenu()">About</a>
         <a href="#skills"   onclick="closeMenu()">Skills</a>
-        <a href="#projects" onclick="closeMenu()">Projects</a>
-        <a href="#contact"  onclick="closeMenu()">Contact</a>
+        <a href="#projects"  onclick="closeMenu()">Projects</a>
+        <a href="#ai-take"  onclick="closeMenu()">AI &amp; Honesty</a>
+        <a href="#contact"   onclick="closeMenu()">Contact</a>
     </div>
 
     <!-- HERO -->
@@ -778,6 +1046,7 @@
             <div class="about-text reveal">
                 <p>I'm a passionate web developer with 3+ years of experience building modern web applications. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.</p>
                 <p>I studied at <strong style="color:#e0e0e0;">Stredná odborná škola elektrotechnická, Matejovce</strong>, where I gained a foundation in electrical engineering and got my first taste of programming. Most of my coding knowledge, however, I built up on my own — self-taught through practice, projects, and a lot of curiosity.</p>
+                <p>Most of my recent projects are real websites I built from scratch for local Slovak companies (electrical and plumbing businesses). I handle design, coding, and deployment myself.</p>
                 <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or diving into UI/UX design concepts.</p>
 
                 <div class="about-meta">
@@ -899,28 +1168,64 @@
         <p class="section-sub reveal">Some of my recent work</p>
         <div class="projects-grid">
             <div class="project-card reveal" style="transition-delay:0.05s">
-                <div class="project-thumb">⚡</div>
+                <div class="project-thumb">
+                    <div class="device-frames">
+                        <div class="device-desktop-frame">
+                            <div class="device-desktop-bar"><span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span></div>
+                            <div class="device-desktop-screen">⚡</div>
+                        </div>
+                        <div class="device-mobile-frame">
+                            <div class="device-mobile-notch"></div>
+                            <div class="device-mobile-screen">⚡</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-info">
                     <h3>S-TECH Elektroinštalácie</h3>
-                    <p>Business website for an electrical installation company — services, portfolio, smart home solutions, and contact form.</p>
+                    <p>Built from scratch for a local electrical installation company. Presents their services — electrical installations, smart home solutions, photovoltaic systems, and revisions — in a clean and professional way. Includes responsive design, contact form with validation, and clear call-to-actions.</p>
+                    <div class="project-role"><span class="role-label">My role:</span> Complete design, coding, text adjustments and deployment.</div>
                     <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                     <a href="https://stech.sk" target="_blank" rel="noopener" class="live-link">&#x1F517; stech.sk</a>
                 </div>
             </div>
             <div class="project-card reveal" style="transition-delay:0.15s">
-                <div class="project-thumb">🔧</div>
+                <div class="project-thumb">
+                    <div class="device-frames">
+                        <div class="device-desktop-frame">
+                            <div class="device-desktop-bar"><span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span></div>
+                            <div class="device-desktop-screen">🔧</div>
+                        </div>
+                        <div class="device-mobile-frame">
+                            <div class="device-mobile-notch"></div>
+                            <div class="device-mobile-screen">🔧</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>OPUSS — Plyn, Voda, Kúrenie</h3>
-                    <p>Business website for a plumbing &amp; heating company — water/gas/heating installations, solar panels, heat pumps, inspections, and service.</p>
+                    <h3>Opuss – Inštalatérske a vykurovacie služby</h3>
+                    <p>Complete website for a plumbing and heating company. Covers water/gas installations, underfloor heating, solar panels, heat pumps, and mandatory revisions. Designed to build trust with clear service descriptions and a professional look.</p>
+                    <div class="project-role"><span class="role-label">My role:</span> Full development from design to live deployment.</div>
                     <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                     <a href="https://opuss.sk" target="_blank" rel="noopener" class="live-link">&#x1F517; opuss.sk</a>
                 </div>
             </div>
             <div class="project-card reveal" style="transition-delay:0.25s">
-                <div class="project-thumb">🌐</div>
+                <div class="project-thumb">
+                    <div class="device-frames">
+                        <div class="device-desktop-frame">
+                            <div class="device-desktop-bar"><span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span></div>
+                            <div class="device-desktop-screen">🌐</div>
+                        </div>
+                        <div class="device-mobile-frame">
+                            <div class="device-mobile-notch"></div>
+                            <div class="device-mobile-screen">🌐</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-info">
                     <h3>Web bez obalu</h3>
-                    <p>Personal freelance portfolio site — design, code, copywriting, domain &amp; hosting setup. Straightforward style, fully responsive, built from scratch.</p>
+                    <p>My own freelance service website offering honest, no-nonsense web development for small businesses and tradesmen in Slovakia — no templates, no unnecessary costs. Explains my approach and showcases real client work (stech.sk, opuss.sk).</p>
+                    <div class="project-role"><span class="role-label">My role:</span> 100% built by me – design, code, copywriting, domain &amp; hosting setup.</div>
                     <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
                     <a href="https://webbezobalu.sk" target="_blank" rel="noopener" class="live-link">&#x1F517; webbezobalu.sk</a>
                 </div>
@@ -943,6 +1248,54 @@
                     <a href="https://jozefneupauer.github.io/SiteMaterialTracker/" target="_blank" rel="noopener" class="live-link">&#x1F517; jozefneupauer.github.io/SiteMaterialTracker</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- AI TAKE -->
+    <section id="ai-take">
+        <h2 class="reveal">AI &amp; <span>Honest Work</span></h2>
+        <p class="section-sub reveal">My real opinion — no filter</p>
+        <div class="ai-take-card reveal" style="transition-delay:0.1s">
+            <div class="ai-take-badge">&#x1F525; Hot Take</div>
+            <blockquote class="ai-quote">Using AI is <span>not cheating.</span><br>It&#x2019;s resourcefulness.</blockquote>
+            <div class="ai-points">
+                <div class="ai-point">
+                    <div class="ai-point-icon">&#x1F3ED;</div>
+                    <div class="ai-point-title">The whole industry uses it</div>
+                    <p>From GitHub Copilot to custom LLM pipelines — serious IT companies use AI every single day. If the industry uses it, why wouldn&#x2019;t I?</p>
+                </div>
+                <div class="ai-point">
+                    <div class="ai-point-icon">&#x1F4DA;</div>
+                    <div class="ai-point-title">My best learning tool</div>
+                    <p>As a self-taught developer, AI helped me grow faster than any course could. It lets me explore ideas, debug faster, and write better code.</p>
+                </div>
+                <div class="ai-point">
+                    <div class="ai-point-icon">&#x1F4B0;</div>
+                    <div class="ai-point-title">It&#x2019;s about the product</div>
+                    <p>What you&#x2019;re actually paying for is quality, price, and a working result — not a specific process. The output is what matters, not how it was made.</p>
+                </div>
+                <div class="ai-point">
+                    <div class="ai-point-icon">&#x1F3AF;</div>
+                    <div class="ai-point-title">The result speaks for itself</div>
+                    <p>The sites I build work, look professional, load fast, and deliver real value for real businesses. That&#x2019;s what I charge for — and it&#x2019;s worth it.</p>
+                </div>
+            </div>
+            <div class="ai-highlight">
+                <div class="ai-highlight-icon">&#x1F9B7;</div>
+                <div class="ai-highlight-body">
+                    <strong>I can build it from scratch. <em>Every. Single. Line.</em></strong>
+                    <p>I know my HTML, CSS and JavaScript inside out. I don&#x2019;t need AI to write code — I choose to use it the same way a carpenter uses a power drill instead of a hand saw. The craft is still there. The skill is still there. The result is just delivered faster, at the same quality, for a fair price.</p>
+                </div>
+                <div class="ai-highlight-proof">
+                    <span class="proof-label">Proof</span>
+                    <div class="proof-sites">
+                        <span class="proof-site">&#x2192; stech.sk</span>
+                        <span class="proof-site">&#x2192; opuss.sk</span>
+                        <span class="proof-site">&#x2192; webbezobalu.sk</span>
+                    </div>
+                </div>
+            </div>
+            <p class="ai-closing">I&#x2019;m self-taught, I use AI daily, and I&#x2019;m proud of both. <strong>When you hire me, you&#x2019;re paying for the result — not the process.</strong> The quality is the same. The price is fair. The delivery is faster.</p>
         </div>
     </section>
 
@@ -978,6 +1331,14 @@
             </div>
 
             <p class="contact-reply">&#x26A1; Average reply time: <span>under 24 hours</span></p>
+        </div>
+
+        <div class="open-to-team reveal" style="transition-delay:0.2s">
+            <div class="open-to-team-icon">&#x1F91D;</div>
+            <div class="open-to-team-body">
+                <h4>Also open to joining a bigger team or project</h4>
+                <p>Freelance work is great, but I&#x2019;d genuinely love to be part of a <strong>larger project</strong> — something with a real team, real challenges, and people I can learn from and build with. If you&#x2019;re working on something interesting and think I could contribute, <strong>reach out</strong>. I’m easy to work with and always up for something new.</p>
+            </div>
         </div>
     </section>
 
