@@ -1,8 +1,17 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Self-taught web developer from Slovakia. I build fast, clean, and responsive websites and web apps for small businesses — custom-designed for your brand.">
+    <meta property="og:title" content="Jozef Neupauer | Web Developer">
+    <meta property="og:description" content="Self-taught web developer from Slovakia — building fast, clean websites and web apps for small businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jozefneupauer.github.io">
+    <meta property="og:image" content="https://jozefneupauer.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jozef Neupauer | Web Developer">
+    <meta name="twitter:description" content="Self-taught web developer from Slovakia — building fast, clean, custom websites and web apps for small businesses.">
     <title>Jozef Neupauer | Web Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -122,11 +131,11 @@
             cursor: pointer;
             user-select: none;
         }
-        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav ul { list-style: none; display: flex; gap: 18px; }
         nav ul li a {
             color: #888;
             text-decoration: none;
-            font-size: 0.92rem;
+            font-size: 0.82rem;
             font-weight: 500;
             padding: 4px 0;
             position: relative;
@@ -179,15 +188,17 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 40px;
+            gap: 22px;
             opacity: 0;
             transition: opacity 0.3s;
+            overflow-y: auto;
+            padding: 28px 0;
         }
         .nav-overlay.open { display: flex; opacity: 1; }
         .nav-overlay a {
             color: #bbb;
             text-decoration: none;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: 1px;
             transition: color 0.2s;
@@ -984,6 +995,106 @@
             .stat-box .num { font-size: 1.8rem; }
             .scroll-hint { display: none; }
         }
+
+        /* EXPERIENCE / TIMELINE */
+        .timeline { position: relative; padding-left: 28px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 8px; bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, #00d4ff55, #0094ff22, transparent);
+            border-radius: 2px;
+        }
+        .timeline-item { position: relative; margin-bottom: 38px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute;
+            left: -34px; top: 6px;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d4ff, #0094ff);
+            box-shadow: 0 0 10px #00d4ff66;
+        }
+        .timeline-badge {
+            display: inline-block;
+            background: #00d4ff12; border: 1px solid #00d4ff35;
+            border-radius: 4px; padding: 2px 10px;
+            font-size: 0.68rem; font-weight: 700; color: #00d4ff;
+            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
+        }
+        .timeline-date { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #00d4ff; margin-bottom: 5px; opacity: 0.8; }
+        .timeline-title { font-size: 1.03rem; font-weight: 700; color: #d8d8d8; margin-bottom: 3px; }
+        .timeline-org { font-size: 0.83rem; color: #4a7080; margin-bottom: 10px; font-weight: 500; }
+        .timeline-desc { font-size: 0.87rem; color: #555; line-height: 1.75; }
+
+        /* SERVICES */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .service-card {
+            background: #0e0e0e; border: 1px solid #1e1e1e;
+            border-radius: 18px; padding: 32px 28px;
+            position: relative; overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover { transform: translateY(-6px); border-color: #00d4ff33; box-shadow: 0 16px 40px #00d4ff0a; }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #0094ff);
+            transform: scaleX(0); transform-origin: left; transition: transform 0.38s ease;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon { font-size: 2rem; margin-bottom: 18px; }
+        .service-title { font-size: 1.05rem; font-weight: 700; color: #d8d8d8; margin-bottom: 10px; }
+        .service-desc { font-size: 0.87rem; color: #555; line-height: 1.8; margin-bottom: 20px; }
+        .service-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .service-list li { font-size: 0.82rem; color: #4a7080; display: flex; align-items: center; gap: 8px; }
+        .service-list li::before { content: '✓'; color: #00d4ff; font-weight: 700; flex-shrink: 0; }
+
+        /* TESTIMONIALS */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .testimonial-card {
+            background: #0e0e0e; border: 1px solid #1e1e1e;
+            border-radius: 18px; padding: 30px 28px;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .testimonial-card:hover { border-color: #00d4ff33; transform: translateY(-4px); box-shadow: 0 12px 36px #00d4ff0a; }
+        .testimonial-quote-icon { font-size: 3rem; color: #00d4ff; opacity: 0.2; line-height: 1; margin-bottom: 12px; font-family: Georgia, serif; }
+        .testimonial-stars { font-size: 0.88rem; color: #ffa040; letter-spacing: 2px; margin-bottom: 14px; }
+        .testimonial-text { font-size: 0.92rem; color: #7a8fa6; line-height: 1.85; margin-bottom: 24px; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 14px; }
+        .testimonial-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: linear-gradient(135deg, #00d4ff18, #0094ff28);
+            border: 1px solid #00d4ff33;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; flex-shrink: 0;
+        }
+        .testimonial-name { font-size: 0.9rem; font-weight: 700; color: #d0d0d0; }
+        .testimonial-role { font-size: 0.75rem; color: #444; margin-top: 2px; }
+
+        /* FAQ */
+        .faq-list { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+        .faq-item { background: #0e0e0e; border: 1px solid #1e1e1e; border-radius: 14px; overflow: hidden; transition: border-color 0.25s; }
+        .faq-item.open { border-color: #00d4ff33; }
+        .faq-question {
+            width: 100%; background: none; border: none; text-align: left;
+            padding: 20px 24px; color: #c8c8c8; font-size: 0.97rem; font-weight: 600;
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            gap: 16px; font-family: inherit; transition: color 0.2s;
+        }
+        .faq-question:hover { color: #fff; }
+        .faq-chevron { width: 18px; height: 18px; flex-shrink: 0; color: #00d4ff; transition: transform 0.3s; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), padding 0.38s;
+            padding: 0 24px; color: #555; font-size: 0.9rem; line-height: 1.85;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+
+        @media (max-width: 768px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1003,9 +1114,10 @@
         <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">&lt;JN /&gt;</div>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#ai-take">AI &amp; Honesty</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Toggle menu">
@@ -1015,11 +1127,15 @@
 
     <!-- MOBILE NAV OVERLAY -->
     <div class="nav-overlay" id="nav-overlay">
-        <a href="#about"    onclick="closeMenu()">About</a>
-        <a href="#skills"   onclick="closeMenu()">Skills</a>
-        <a href="#projects"  onclick="closeMenu()">Projects</a>
-        <a href="#ai-take"  onclick="closeMenu()">AI &amp; Honesty</a>
-        <a href="#contact"   onclick="closeMenu()">Contact</a>
+        <a href="#about"        onclick="closeMenu()">About</a>
+        <a href="#experience"   onclick="closeMenu()">Experience</a>
+        <a href="#services"     onclick="closeMenu()">Services</a>
+        <a href="#skills"       onclick="closeMenu()">Skills</a>
+        <a href="#projects"     onclick="closeMenu()">Projects</a>
+        <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
+        <a href="#ai-take"      onclick="closeMenu()">AI &amp; Honesty</a>
+        <a href="#faq"          onclick="closeMenu()">FAQ</a>
+        <a href="#contact"      onclick="closeMenu()">Contact</a>
     </div>
 
     <!-- HERO -->
@@ -1034,6 +1150,7 @@
         <div class="hero-btns">
             <a href="#projects" class="btn">View My Work</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <a href="jozef-neupauer-cv.pdf" download class="btn btn-outline">&#x1F4C4; Download CV</a>
         </div>
         <div class="scroll-hint"><div class="arrow"></div></div>
     </div>
@@ -1078,6 +1195,96 @@
                 <div class="stat-box reveal" style="transition-delay:0.30s"><div class="num" data-target="15">0</div><div class="label">Happy Clients</div></div>
                 <div class="stat-box reveal" style="transition-delay:0.40s"><div class="num" data-target="5">0</div><div class="label">Technologies</div></div>
             </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h2 class="reveal">My <span>Experience</span></h2>
+        <p class="section-sub reveal">Where I've been and what I've done</p>
+        <div class="timeline reveal" style="transition-delay:0.1s">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-badge">Current</div>
+                <div class="timeline-date">2023 — Present</div>
+                <div class="timeline-title">Freelance Web Developer</div>
+                <div class="timeline-org">Self-employed · webbezobalu.sk</div>
+                <div class="timeline-desc">Building custom websites for small Slovak businesses — from initial design concept to live deployment. Handling everything: design, code, copywriting, domain &amp; hosting setup.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023</div>
+                <div class="timeline-title">React &amp; Full-Stack Learning</div>
+                <div class="timeline-org">Self-taught</div>
+                <div class="timeline-desc">Expanded to React, Node.js, and SQL. Built SiteMaterialTracker — a full CRUD app with CSV export, search, and local storage persistence.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2022 — 2024</div>
+                <div class="timeline-title">Self-Taught Web Developer</div>
+                <div class="timeline-org">Personal projects &amp; open-source</div>
+                <div class="timeline-desc">Learned HTML, CSS and JavaScript from scratch through hands-on projects and online resources. Developed a strong eye for UI/UX design along the way.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 — 2024</div>
+                <div class="timeline-title">Electrical Engineering Student</div>
+                <div class="timeline-org">SOŠ elektrotechnická, Matejovce</div>
+                <div class="timeline-desc">Technical secondary school specialising in electrical engineering. Discovered programming here and began self-teaching web development alongside formal studies.</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2 class="reveal">My <span>Services</span></h2>
+        <p class="section-sub reveal">What I can build for you</p>
+        <div class="services-grid">
+
+            <div class="service-card reveal" style="transition-delay:0.05s">
+                <div class="service-icon">🖥️</div>
+                <div class="service-title">Business Website</div>
+                <div class="service-desc">A clean, professional website for your company — custom-designed for your brand. Fast, mobile-friendly, and built to convert visitors into clients.</div>
+                <ul class="service-list">
+                    <li>Custom design tailored to your brand</li>
+                    <li>Fully responsive (mobile, tablet, desktop)</li>
+                    <li>Contact form with validation</li>
+                    <li>SEO-ready structure &amp; meta tags</li>
+                    <li>Domain &amp; hosting setup included</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal" style="transition-delay:0.10s">
+                <div class="service-icon">⚛️</div>
+                <div class="service-title">Web Application</div>
+                <div class="service-desc">Interactive web apps built with React — dashboards, booking systems, trackers, or any tool with dynamic data and real user interaction.</div>
+                <ul class="service-list">
+                    <li>React with modern JavaScript</li>
+                    <li>Data persistence (localStorage / API)</li>
+                    <li>Clean, intuitive UI</li>
+                    <li>CSV export, search &amp; filtering</li>
+                    <li>Cross-browser compatible</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal" style="transition-delay:0.15s">
+                <div class="service-icon">🔧</div>
+                <div class="service-title">Fixes &amp; Improvements</div>
+                <div class="service-desc">Have a website that feels outdated, slow, or broken? I can audit, fix, and modernise it — so it actually works for you.</div>
+                <ul class="service-list">
+                    <li>Bug fixing &amp; code cleanup</li>
+                    <li>Performance optimisation</li>
+                    <li>Mobile responsiveness fixes</li>
+                    <li>Design refresh &amp; modernisation</li>
+                    <li>Content &amp; copy updates</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
@@ -1251,6 +1458,54 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <h2 class="reveal">Client <span>Testimonials</span></h2>
+        <p class="section-sub reveal">What people I've worked with say</p>
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card reveal" style="transition-delay:0.05s">
+                <div class="testimonial-quote-icon">&ldquo;</div>
+                <div class="testimonial-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+                <p class="testimonial-text">&ldquo;Jozef built our website from scratch and we couldn&rsquo;t be happier. Clean design, loads fast, works perfectly on mobile. He handled everything &mdash; we didn&rsquo;t have to deal with any technical stuff.&rdquo;</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">&#x26A1;</div>
+                    <div>
+                        <div class="testimonial-name">S-TECH Elektro</div>
+                        <div class="testimonial-role">Electrical Services &middot; stech.sk</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal" style="transition-delay:0.12s">
+                <div class="testimonial-quote-icon">&ldquo;</div>
+                <div class="testimonial-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+                <p class="testimonial-text">&ldquo;Very professional and straightforward to work with. Got exactly what we needed &mdash; a site that presents our services clearly and looks great. Would recommend him without hesitation.&rdquo;</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">&#x1F527;</div>
+                    <div>
+                        <div class="testimonial-name">Opuss</div>
+                        <div class="testimonial-role">Plumbing &amp; Heating &middot; opuss.sk</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal" style="transition-delay:0.20s">
+                <div class="testimonial-quote-icon">&ldquo;</div>
+                <div class="testimonial-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+                <p class="testimonial-text">&ldquo;Fast delivery, fair price, and a result that looked way better than expected. He knew exactly what a small business needs &mdash; no bloat, just a clean and working website.&rdquo;</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">&#x1F4BC;</div>
+                    <div>
+                        <div class="testimonial-name">Local Business Client</div>
+                        <div class="testimonial-role">Slovakia</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- AI TAKE -->
     <section id="ai-take">
         <h2 class="reveal">AI &amp; <span>Honest Work</span></h2>
@@ -1283,8 +1538,8 @@
             <div class="ai-highlight">
                 <div class="ai-highlight-icon">&#x1F9B7;</div>
                 <div class="ai-highlight-body">
-                    <strong>I can build it from scratch. <em>Every. Single. Line.</em></strong>
-                    <p>I know my HTML, CSS and JavaScript inside out. I don&#x2019;t need AI to write code — I choose to use it the same way a carpenter uses a power drill instead of a hand saw. The craft is still there. The skill is still there. The result is just delivered faster, at the same quality, for a fair price.</p>
+                    <strong>I know what I&rsquo;m doing. <em>With any tool.</em></strong>
+                    <p>I understand HTML, CSS and JavaScript properly — which means I can work with web builders, hand-code from scratch, or anything in between. I pick the right tool for each project. The craft is still there. The skill is still there. The result is delivered faster, at the same quality, for a fair price.</p>
                 </div>
                 <div class="ai-highlight-proof">
                     <span class="proof-label">Proof</span>
@@ -1296,6 +1551,63 @@
                 </div>
             </div>
             <p class="ai-closing">I&#x2019;m self-taught, I use AI daily, and I&#x2019;m proud of both. <strong>When you hire me, you&#x2019;re paying for the result — not the process.</strong> The quality is the same. The price is fair. The delivery is faster.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2 class="reveal">Frequently Asked <span>Questions</span></h2>
+        <p class="section-sub reveal">Common things clients ask</p>
+        <div class="faq-list reveal" style="transition-delay:0.1s">
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    How long does it take to build a website?
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">For a typical business website (5–8 pages), I usually deliver within 1–2 weeks. Larger or more complex projects may take 3–4 weeks. I'll always give you a realistic timeline before we begin.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Do you work with clients outside Slovakia?
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">Absolutely. I work 100% remotely and collaborate with clients anywhere. I'm fluent in Slovak, English, Polish, and Czech, so communication is rarely a barrier.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Will I be able to update the website myself?
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">For simple content changes I can walk you through it, or handle updates myself for a small fee. Most of my clients just reach out when they need changes — it's quick and hassle-free.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Do you use web builders or code by hand?
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">I use both — whatever fits the project best. For smaller business sites I often work with web builders for faster delivery at a lower cost. For more custom or complex requirements I code by hand. Either way, the design is tailored to you and I handle everything from start to finish.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    How much does it cost?
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">Pricing depends on scope, complexity, and what's included (design, copywriting, hosting setup, etc.). I aim for fair prices for quality work — especially for small businesses. Just reach out with your idea and I'll send a quote with no strings attached.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Do you use AI in your work?
+                    <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="faq-answer">Yes, and I'm open about it. I use AI as a tool — the same way a carpenter uses a power drill. It helps me work faster, but the design thinking, structure, and decisions are all mine. Same quality, delivered faster, at a fair price.</div>
+            </div>
+
         </div>
     </section>
 
@@ -1499,6 +1811,22 @@
         }
         draw();
     })();
+
+    // ── FAQ ACCORDION ────────────────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item   = btn.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function (el) {
+                el.classList.remove('open');
+                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 
     // ── CURSOR GLOW ──────────────────────────────────────────────
     var glowEl = document.getElementById('cursor-glow');
