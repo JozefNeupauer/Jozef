@@ -828,58 +828,95 @@
       font-weight: 700;
     }
 
-    .timeline {
+    #experience {
+      padding-top: 52px;
+    }
+
+    #experience .section-head {
       display: grid;
-      gap: 16px;
+      grid-template-columns: minmax(260px, 0.75fr) minmax(320px, 1fr);
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    #experience .section-head p {
+      max-width: 38ch;
+      justify-self: end;
+      color: var(--soft);
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      line-height: 1.65;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      top: 23px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(246,184,78,0.18), var(--accent), rgba(246,184,78,0.18));
+      box-shadow: 0 0 18px rgba(246,184,78,0.16);
     }
 
     .timeline-item {
       position: relative;
-      padding: 24px 24px 24px 28px;
+      min-height: 260px;
+      padding: 66px 24px 24px;
       overflow: hidden;
     }
 
-    .timeline-item::before {
+    .timeline-item::after {
       content: "";
       position: absolute;
-      left: 14px;
-      top: 24px;
-      bottom: 24px;
-      width: 1px;
-      background: linear-gradient(to bottom, rgba(246,184,78,0.45), transparent);
+      inset: auto -30% -65% -30%;
+      height: 75%;
+      background: radial-gradient(circle, rgba(246,184,78,0.09), transparent 68%);
+      pointer-events: none;
     }
 
     .timeline-dot {
       position: absolute;
-      left: 8px;
-      top: 28px;
+      z-index: 2;
+      left: 24px;
+      top: 16px;
       width: 14px;
       height: 14px;
+      border: 3px solid #151519;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 18px rgba(246,184,78,0.55);
+      box-shadow: 0 0 0 6px rgba(246,184,78,0.08), 0 0 18px rgba(246,184,78,0.55);
     }
 
     .timeline-item strong {
       display: block;
-      font-size: 1.15rem;
-      margin-bottom: 6px;
+      min-height: 2.4em;
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      margin-bottom: 12px;
       letter-spacing: -0.03em;
     }
 
     .timeline-item .meta {
       color: var(--accent);
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .timeline-item p {
+      position: relative;
+      z-index: 1;
       margin: 0;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.72;
     }
 
     .cards {
@@ -1472,6 +1509,24 @@
         align-items: start;
         flex-direction: column;
       }
+
+      #experience .section-head {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      #experience .section-head p {
+        max-width: 44ch;
+        justify-self: start;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline::before {
+        display: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1540,6 +1595,14 @@
 
       .stat-board {
         grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        min-height: 0;
       }
 
       .skill-list {
@@ -1730,7 +1793,6 @@
             <div>
               <h2>About <span class="gradient-text">Me</span></h2>
             </div>
-            <p>I design and build the whole experience, not just the code. This version turns the portfolio into a more immersive story with motion, depth, and stronger visual rhythm.</p>
           </div>
           <div class="panel-grid">
             <article class="glass about-card reveal tilt-target" data-tilt>
@@ -1760,9 +1822,9 @@
         <div class="wrap">
           <div class="section-head reveal">
             <div>
-              <h2>Experience <span class="gradient-text">Timeline</span></h2>
+              <h2>My <span class="gradient-text">Journey</span></h2>
             </div>
-            <p>A short visual history of the path that shaped the work: self-teaching, shipping client sites, and building stronger product instincts over time.</p>
+            <p><strong>A short visual history</strong> of the path that shaped the work: self-teaching, shipping client sites, and building stronger product instincts over time.</p>
           </div>
           <div class="timeline">
             <article class="glass timeline-item reveal tilt-target" data-tilt>
@@ -1799,7 +1861,6 @@
             <div>
               <h2>Services <span class="gradient-text">That Sell</span></h2>
             </div>
-            <p>Three focused service directions, presented with stronger motion and hierarchy so the page reads more like a high-end studio site.</p>
           </div>
           <div class="cards">
             <article class="glass service reveal tilt-target" data-tilt>
@@ -1827,7 +1888,6 @@
             <div>
               <h2>Skills <span class="gradient-text">In Motion</span></h2>
             </div>
-            <p>The skill bars animate on reveal so the section feels dynamic instead of static. Each bar uses its own pace and color balance.</p>
           </div>
           <div class="glass skill-list reveal">
             <div class="skill-row">
@@ -1864,7 +1924,6 @@
             <div>
               <h2>Selected <span class="gradient-text">Projects</span></h2>
             </div>
-            <p>Tap any project card to open a richer preview modal. The featured project shows a more cinematic treatment to mirror a product showcase landing page.</p>
           </div>
           <div class="project-grid">
             <article class="glass project featured reveal tilt-target" data-tilt data-project='{"title":"VoltLearn","badge":"Featured Project","description":"A gamified learning platform for electrical engineering students. Designed to make technical concepts feel approachable, playful, and easy to revisit with daily streaks, achievements, and personalized progress.","points":["Built from scratch as a learning product with strong onboarding and progression logic.","Focused on making complex material feel visual, approachable, and motivating.","Combines branding, UX, interface polish, and deployment into one complete experience."],"tags":["React","TypeScript","Vite","Tailwind CSS"],"link":"https://jozefneupauer.github.io/VoltLearn/"}'>
@@ -1917,7 +1976,6 @@
             <div>
               <h2>Client <span class="gradient-text">Testimonials</span></h2>
             </div>
-            <p>Short social proof cards add another visual rhythm point and make the portfolio feel more established.</p>
           </div>
           <div class="testimonials">
             <article class="glass testimonial reveal tilt-target" data-tilt>
@@ -1948,7 +2006,6 @@
             <div>
               <h2>FAQ <span class="gradient-text">Accordion</span></h2>
             </div>
-            <p>A simple interactive pattern that gives the page some utility and keeps the information from feeling flat.</p>
           </div>
           <div class="faq reveal">
             <div class="glass faq-item">
@@ -1977,7 +2034,6 @@
             <div>
               <h2>Let’s <span class="gradient-text">Work Together</span></h2>
             </div>
-            <p>This final block uses a split layout with a sharper call to action so the page closes with a stronger conversion moment.</p>
           </div>
           <div class="contact">
             <article class="glass contact-card contact-panel reveal tilt-target" data-tilt>
@@ -2010,7 +2066,7 @@
         </div>
       </section>
 
-      <div class="wrap footer">© 2026 Jozef Neupauer. Recreated as a more immersive single-file portfolio concept.</div>
+      <div class="wrap footer">© 2026 Jozef Neupauer.</div>
     </main>
   </div>
 
